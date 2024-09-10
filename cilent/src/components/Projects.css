@@ -1,0 +1,185 @@
+/* Projects.css */
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container for projects */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+  max-width: 1200px;
+  margin: 0 auto; /* Center horizontally */
+  background-color: #ffffff; /* Ensure container has a background color */
+  border-radius: 12px; /* Rounded corners */
+  opacity: 0; /* Start with hidden */
+  transform: translateY(20px); /* Start off-screen */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition for animation */
+}
+
+.projects-container.show {
+  opacity: 1; /* Show when class 'show' is added */
+  transform: translateY(0); /* Move to original position */
+}
+
+/* Title and subtitle styles */
+.projects-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.projects-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Grid layout for projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Two columns layout for large screens */
+  gap: 20px;
+  width: 100%;
+}
+
+/* Project card styles */
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styles within the project card */
+.project-image img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Project details styles */
+.project-details {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.project-tech {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.tech-label {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.demo-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.demo-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.demo-icon {
+  margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 2.2rem;
+  }
+
+  .projects-subtitle {
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Adjust grid for tablets */
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-tech {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 2rem;
+  }
+
+  .projects-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+  }
+
+  .project-tech {
+    font-size: 1rem;
+  }
+}

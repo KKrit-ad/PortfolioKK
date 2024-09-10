@@ -1,0 +1,89 @@
+/* AboutMe.css */
+.about-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 220px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start off-screen */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition for animation */
+}
+
+.about-me.show {
+  opacity: 1; /* Show when class 'show' is added */
+  transform: translateY(0); /* Move to original position */
+}
+
+.about-me-image {
+  flex: 0 0 40%;
+  padding-right: 20px;
+}
+
+.about-me-image img {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-me-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-me-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff6600; /* Color for the heading */
+}
+
+.about-me-text p {
+  font-size: 1.2rem;
+  color: #343a40;
+  line-height: 1.6; /* Increased line height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-me {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-me-image {
+    flex: 0 0 auto;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .about-me-image img {
+    height: auto; /* Adjust image height for smaller screens */
+    max-width: 100%;
+  }
+
+  .about-me-text {
+    padding: 0 20px; /* Add some padding for smaller screens */
+  }
+
+  .about-me-text h2 {
+    font-size: 2rem; /* Adjust font size for heading */
+  }
+
+  .about-me-text p {
+    font-size: 1rem; /* Adjust font size for paragraph */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-text h2 {
+    font-size: 1.5rem; /* Further adjust font size for heading */
+  }
+
+  .about-me-text p {
+    font-size: 1.2rem; /* Further adjust font size for paragraph */
+  }
+}
